@@ -22,9 +22,6 @@ class Posts extends Component {
       <div>
         <h2>Posts</h2>
         <Post posts={this.props.posts} />
-        {this.props.posts.map((post) => (
-          <div key={post._id}>{post.title}</div>
-        ))}
       </div>
     );
   }

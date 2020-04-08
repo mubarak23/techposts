@@ -11,9 +11,9 @@ const Post = ({ posts }) =>
     return (
       <div key={post._id} className='post bg-white p-1 my-1'>
         <Link to='/login'>
-          <p className='post'>{post.title}</p>
+          <p>{post.title}</p>
         </Link>
-        <p className='post-date'>
+        <p>
           Posted on <Moment format='YYYY/MM/DD'>{post.title}</Moment>
         </p>
       </div>
