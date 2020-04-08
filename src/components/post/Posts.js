@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 //import CourseList from './CourseList';
+import Post from './Post';
 import { bindActionCreators } from 'redux';
 import * as postAction from '../../redux/actions/postAction';
 //import * as authorAction from '../../redux/actions/authorAction';
@@ -19,12 +20,10 @@ class Posts extends Component {
   render() {
     return (
       <div>
-        <h2>Courses</h2>
-        {this.props.posts.map((course) => (
-          <div key={course.title}>
-            {course.title}
-            <p>{course.postbody}</p>
-          </div>
+        <h2>Posts</h2>
+        <Post posts={this.props.posts} />
+        {this.props.posts.map((post) => (
+          <div key={post._id}>{post.title}</div>
         ))}
       </div>
     );
