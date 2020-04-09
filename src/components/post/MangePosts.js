@@ -16,10 +16,10 @@ function ManagePost({ posts, loadPosts, savePost, history, ...props }) {
   }, []);
 
   function handleChange(event) {
-    //const { name, value } = event.target;
+    const { name, value } = event.target;
     setPost((prevPost) => ({
       ...prevPost,
-      [event.target.name]: event.target.value,
+      [name]: name === 'authorId' ? parseInt(value, 10) : value,
     }));
   }
   function handleSubmit(event) {
@@ -31,12 +31,14 @@ function ManagePost({ posts, loadPosts, savePost, history, ...props }) {
   }
 
   return (
-    <PostForm
-      post={post}
-      errors={errors}
-      onChange={handleChange}
-      onSave={handleSubmit}
-    />
+    <div className='text-center'>
+      <PostForm
+        post={post}
+        errors={errors}
+        onChange={handleChange}
+        onSave={handleSubmit}
+      />
+    </div>
   );
 }
 

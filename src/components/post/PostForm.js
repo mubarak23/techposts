@@ -19,8 +19,8 @@ const PostForm = ({ post, onSave, onChange, saving = false, errors = {} }) => {
         error={errors.title}
       />
       <TextInput
-        name='title'
-        label='Title'
+        name='postbody'
+        label='Body'
         value={post.postbody}
         onChange={onChange}
         error={errors.title}
@@ -33,7 +33,6 @@ const PostForm = ({ post, onSave, onChange, saving = false, errors = {} }) => {
 };
 
 PostForm.propTypes = {
-  authors: PropTypes.array.isRequired,
   post: PropTypes.object.isRequired,
   errors: PropTypes.object,
   onSave: PropTypes.func.isRequired,
