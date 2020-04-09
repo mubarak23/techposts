@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 //import { addComment } from '../../actions/post';
-import '../App.css';
+//import '../App.css';
 
 const CommentForm = ({ postId, addComment }) => {
   const [text, setText] = useState('');

@@ -1,15 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
-const HomePage = () => {
+import React from 'react';
+import { Link } from 'react-router-dom';
+const Home = () => {
   return (
-    <div className="jumbotron">
-      <h2>PluralSight Adminstration Panel</h2>
-      <p>React Redux and React Router for Ultra responsive Web App</p>
-      <Link to="/about" className="btn btn-primary btn-lg">
-        Learn More
-      </Link>
-    </div>
+    <section className='landing'>
+      <div className='dark-overlay'>
+        <div className='landing-inner'>
+          <h1 className='x-large'>TechPost</h1>
+          <p className='lead'>
+            Create and share posts about Technologies and get help from other
+            developers
+          </p>
+          <div className='button'>
+            <Link to='/'>Submit Article</Link>
+            <Link to='/'>Contact Us</Link>
+          </div>
+        </div>
+      </div>
+      
+    </section>
   );
 };
 
-export default HomePage;
+export default Home;
