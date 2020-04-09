@@ -5,8 +5,6 @@ import Home from './home/HomePage';
 import AboutPage from './about/AboutPage';
 import Header from './common/Header';
 import PageNotFound from './PageNotFount';
-import CoursePage from './courses/CoursesPage';
-import Courses from './courses/Courses';
 import Posts from './post/Posts';
 import MainOne from './courses/Posts';
 import './App.css';
@@ -17,8 +15,6 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/about' component={AboutPage} />
-        <Route path='/course' component={CoursePage} />
-        <Route path='/courses' component={Courses} />
         <Route path='/posts' component={Posts} />
         <Route path='/mainone' component={MainOne} />
         <Route component={PageNotFound} />

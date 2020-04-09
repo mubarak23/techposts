@@ -19,7 +19,7 @@ class Posts extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='text-center'>
         <h2>Posts</h2>
         <Post posts={this.props.posts} />
       </div>

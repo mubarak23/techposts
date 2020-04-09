@@ -9,7 +9,7 @@ import Comment from './Comment';
 const Post = ({ posts }) =>
   posts.map((post) => {
     return (
-      <div key={post._id} className='post bg-white p-1 my-1'>
+      <div key={post._id} className='post bg-white p-1 my-1 text-center'>
         <Link to='/login'>
           <p>{post.title}</p>
         </Link>
