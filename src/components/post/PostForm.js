@@ -5,7 +5,7 @@ import TextInput from '../common/TextInput';
 const PostForm = ({ post, onSave, onChange, saving = false, errors = {} }) => {
   return (
     <form onSubmit={onSave}>
-      <h2>Add</h2>
+      <h2>{post.id ? 'Edit' : 'Add'} Course</h2>
       {errors.onSave && (
         <div className='alert alert-danger' role='alert'>
           {errors.onSave}

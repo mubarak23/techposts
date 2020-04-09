@@ -1,6 +1,6 @@
 import * as types from './actionType';
 import * as postAPI from '../../services/postApi';
-import * as courseAPI from '../../services/courseApi';
+//import * as courseAPI from '../../services/courseApi';
 
 export function createCourse(course) {
   return { type: types.CREATE_COURSE, course: course };
@@ -14,12 +14,12 @@ export function loadPostsSuccess(posts) {
   return { type: types.LOAD_POSTS_SUCCESS, posts };
 }
 
-export function updateCourseSuccess(post){
-
+export function updateCourseSuccess(posts) {
+  return { type: types.UPDATE_POST_SUCCESS, posts };
 }
 
-export function createCourseSuccess(post){
-  
+export function createCourseSuccess(posts) {
+  return { type: types.CREATE_POST_SUCCESS, posts };
 }
 
 export function loadPosts() {
@@ -36,13 +36,13 @@ export function loadPosts() {
   };
 }
 
-export function savePost(course) {
+export function savePost(post) {
   return function (dispatch, getState) {
     return postAPI
-      .savePost(course)
-      .then((savedCourse) => {
-        course.id
-          ? dispatch(updateCourseSuccess(savedCourse))
+      .savePost(post)
+      .then((post) => {
+        post.id
+          ? dispatch(updateCourseSuccess(post))
           : dispatch(createCourseSuccess);
       })
       .catch((error) => {
@@ -50,4 +50,3 @@ export function savePost(course) {
       });
   };
 }
-

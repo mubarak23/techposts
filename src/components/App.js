@@ -7,6 +7,7 @@ import Header from './common/Header';
 import PageNotFound from './PageNotFount';
 import Posts from './post/Posts';
 import MainOne from './courses/Posts';
+import ManagePost from './post/MangePosts';
 import './App.css';
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/about' component={AboutPage} />
         <Route path='/posts' component={Posts} />
         <Route path='/mainone' component={MainOne} />
+        <Route path='/manage' component={ManagePost} />
         <Route component={PageNotFound} />
       </Switch>
     </div>
