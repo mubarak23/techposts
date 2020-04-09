@@ -14,6 +14,14 @@ export function loadPostsSuccess(posts) {
   return { type: types.LOAD_POSTS_SUCCESS, posts };
 }
 
+export function updateCourseSuccess(post){
+
+}
+
+export function createCourseSuccess(post){
+  
+}
+
 export function loadPosts() {
   return function (dispatch) {
     return postAPI
@@ -27,3 +35,19 @@ export function loadPosts() {
       });
   };
 }
+
+export function savePost(course) {
+  return function (dispatch, getState) {
+    return postAPI
+      .savePost(course)
+      .then((savedCourse) => {
+        course.id
+          ? dispatch(updateCourseSuccess(savedCourse))
+          : dispatch(createCourseSuccess);
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
+}
+
