@@ -1,6 +1,6 @@
 import { handleResponse, handleError } from './apiUtils';
 const baseUrl = 'http://localhost:3001/courses/';
-const liveURL = 'https://fast-plains-95666.herokuapp.com/api/post';
+const liveURL = 'https://fast-plains-95666.herokuapp.com/api/post/';
 //process.env.API_URL + "/courses/";
 //const baseUrl = process.env.baseUrl + '/courses/';
 
@@ -8,21 +8,21 @@ export function getPosts() {
   return fetch(liveURL).then(handleResponse).catch(handleError);
 }
 
-export function saveePost(course) {
-  return fetch(baseUrl + (course.id || ''), {
-    method: course.id ? 'PUT' : 'POST', // POST for create, PUT to update when id already exists.
+export function savePost(post) {
+  return fetch(liveURL, {
+    method: 'POST', // POST for create, PUT to update when id already exists.
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(course),
+    body: JSON.stringify(post),
   })
     .then(handleResponse)
     .catch(handleError);
 }
 
-export function savePost(course) {
-  return fetch(baseUrl + (course.id || ''), {
-    method: course.id ? 'PUT' : 'POST', // POST for create, PUT to update when id already exists.
+export function savedPost(post) {
+  return fetch(liveURL + (post._id || ''), {
+    method: post._id ? 'PUT' : 'POST', // POST for create, PUT to update when id already exists.
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(course),
+    body: JSON.stringify(post),
   })
     .then(handleResponse)
     .catch(handleError);
