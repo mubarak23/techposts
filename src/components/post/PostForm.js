@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
+//import AeaInput from '../common/AreaInput';
+import AreaInput from '../common/AreaInput';
 
 const PostForm = ({ post, onSave, onChange, saving = false, errors = {} }) => {
   return (
@@ -19,11 +21,25 @@ const PostForm = ({ post, onSave, onChange, saving = false, errors = {} }) => {
         error={errors.title}
       />
       <TextInput
+        name='name'
+        label='Name'
+        value={post.name}
+        onChange={onChange}
+        error={errors.name}
+      />
+      <TextInput
+        name='user_id'
+        label='User Id'
+        value={post.user_id}
+        onChange={onChange}
+        error={errors.user_id}
+      />
+      <AreaInput
         name='postbody'
-        label='Body'
+        label='Post Body'
         value={post.postbody}
         onChange={onChange}
-        error={errors.title}
+        error={errors.postbody}
       />
       <button type='submit' disabled={saving} className='btn btn-primary'>
         {saving ? 'Saving...' : 'Save'}
