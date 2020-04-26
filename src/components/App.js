@@ -6,6 +6,7 @@ import AboutPage from './about/AboutPage';
 import Header from './common/Header';
 import PageNotFound from './PageNotFount';
 import Posts from './post/Posts';
+import PostDetail from './post/PostDetail';
 import MainOne from './courses/Posts';
 import ManagePost from './post/MangePosts';
 import './App.css';
@@ -19,6 +20,7 @@ function App() {
         <Route path='/posts' component={Posts} />
         <Route path='/mainone' component={MainOne} />
         <Route path='/manage' component={ManagePost} />
+        <Route path='/postDetail/:id' component={PostDetail} />
         <Route component={PageNotFound} />
       </Switch>
     </div>

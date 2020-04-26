@@ -13,8 +13,12 @@ const Post = ({ posts }) =>
         <Link to='/login'>
           <p>{post.title}</p>
         </Link>
+        <Link to={'/postDetail/' + post._id}>
+          <p>Read More</p>
+        </Link>
+
         <p>
-          Posted on <Moment format='YYYY/MM/DD'>{post.title}</Moment>
+          Posted on <Moment format='YYYY/MM/DD'>{post.date}</Moment>
         </p>
       </div>
     );

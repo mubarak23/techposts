@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-//import CourseList from './CourseList';
 import Post from './Post';
 import { bindActionCreators } from 'redux';
 import * as postAction from '../../redux/actions/postAction';
-//import * as authorAction from '../../redux/actions/authorAction';
 
 class Posts extends Component {
   componentDidMount() {

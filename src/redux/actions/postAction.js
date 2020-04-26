@@ -50,3 +50,5 @@ export function savePost(post) {
       });
   };
 }
+
+export function getPost(id) {}
