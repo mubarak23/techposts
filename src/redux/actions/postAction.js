@@ -22,7 +22,9 @@ export function createCourseSuccess(posts) {
   return { type: types.CREATE_POST_SUCCESS, posts };
 }
 
-export function loadPostSuccess(post) {}
+export function loadPostSuccess(post) {
+  return { type: types.LOAD_SINGLE_POST_SUCCESS, post };
+}
 
 export function loadPosts() {
   return function (dispatch) {

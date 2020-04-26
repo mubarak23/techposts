@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import Comment from './Comment';
 import { getPost } from '../../redux/actions/postAction';
 
@@ -14,6 +14,7 @@ const Postdetails = ({ post, match }) => {
     <div className='post bg-white p-2 my-6 text-center'>
       <Link to='/login'>
         <p>{match.params.id}</p>
+        <p>{post}</p>
       </Link>
 
       <p>
@@ -24,11 +25,21 @@ const Postdetails = ({ post, match }) => {
 };
 
 Postdetails.propTypes = {
-  //posts: PropTypes.array.isRequired,
+  getPost: PropTypes.func.isRequired,
+  post: PropTypes.array.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
 };
+
+const mapStateToProps = (state) => ({
+  post: state.post,
+});
 
 const mapDispatchToProps = {
   getPost,
 };
 
-export default Postdetails;
+export default connect(mapStateToProps, mapDispatchToProps)(Postdetails);
