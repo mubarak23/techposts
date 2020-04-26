@@ -27,3 +27,4 @@ export function deleteCourse(courseId) {
     .then(handleResponse)
     .catch(handleError);
 }
+

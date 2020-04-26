@@ -22,6 +22,8 @@ export function createCourseSuccess(posts) {
   return { type: types.CREATE_POST_SUCCESS, posts };
 }
 
+export function loadPostSuccess(post) {}
+
 export function loadPosts() {
   return function (dispatch) {
     return postAPI
@@ -51,4 +53,16 @@ export function savePost(post) {
   };
 }
 
-export function getPost(id) {}
+export function getPost(id) {
+  return function (dispatch) {
+    return postAPI
+      .getPost(id)
+      .then((post) => {
+        dispatch(loadPostSuccess(post));
+        console.log(post);
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
+}

@@ -33,3 +33,9 @@ export function deleteCourse(courseId) {
     .then(handleResponse)
     .catch(handleError);
 }
+
+export function getPost(postId) {
+  return fetch(liveURL + postId)
+    .then(handleResponse)
+    .catch(handleError);
+}
