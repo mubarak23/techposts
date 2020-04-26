@@ -57,6 +57,7 @@ export function savePost(post) {
 
 export function getPost(id) {
   return function (dispatch) {
+    console.log(id);
     return postAPI
       .getPost(id)
       .then((post) => {

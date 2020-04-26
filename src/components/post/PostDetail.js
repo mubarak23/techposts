@@ -1,15 +1,18 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
-import Comment from './Comment';
+//import Comment from './Comment';
 import { getPost } from '../../redux/actions/postAction';
 
 const Postdetails = ({ post, match }) => {
   useEffect(() => {
+    // Your code here
     getPost(match.params.id);
   }, []);
+  console.log(match.params.id);
+
   return (
     <div className='post bg-white p-2 my-6 text-center'>
       <Link to='/login'>
