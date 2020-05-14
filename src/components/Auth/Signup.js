@@ -4,9 +4,9 @@ import './../App.css';
 
 const Signup = () => {
   const history = useHistory();
-  const [username, SetUsername] = useState();
-  const [email, Setemail] = useState();
-  const [password, SetPassword] = useState();
+  const [username, SetUsername] = useState('');
+  const [email, Setemail] = useState('');
+  const [password, SetPassword] = useState('');
 
   return (
     <div className='my-card'>
@@ -15,8 +15,19 @@ const Signup = () => {
         <input type='text' placeholder='Username' />
         <input type='text' placeholder='Email Address' />
         <input type='password' placeholder='Enter a Unique Password' />
-        <button className='btn waves-effect waves-light #64b5f6 blue darken-1' />
+        <button
+          className='btn waves-effect 
+          waves-light #64b5f6 blue darken-1'
+        >
+          Signup
+        </button>
+        <hr />
+        <h5>
+          <Link to='/signin'>Have An Already Signin</Link>
+        </h5>
       </div>
     </div>
   );
 };
+
+export default Signup;

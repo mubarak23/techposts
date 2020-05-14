@@ -1,32 +1,28 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+
 const Header = () => {
-  const Links = (
-    <ul>
-      <li>
-        <Link to='/dashboard'>Dashboard</Link>
-      </li>
-      <li>
-        <Link to='/posts'>Posts</Link>
-      </li>
-
-      <li>
-        <Link to='/register'>Register</Link>
-      </li>
-      <li>
-        <Link to='/login'>Login</Link>
-      </li>
-    </ul>
-  );
-
   return (
-    <nav className='navbar bg-dark'>
-      <h1>
-        <Link to='/'>
-          <i className='fas fa-code' /> TechPost
+    <nav>
+      <div className='nav-wrapper'>
+        <Link to='/' className='brand-logo left'>
+          TechPost
         </Link>
-      </h1>
-      {<Fragment> {Links}</Fragment>}
+        <ul id='nav-mobile' className='right'>
+          <li>
+            <Link to='/signin'>Signin</Link>
+          </li>
+          <li>
+            <Link to='/signup'>Signup</Link>
+          </li>
+          <li>
+            <Link to='/posts'>Posts</Link>
+          </li>
+          <li>
+            <Link to='/createpost'>Create Post</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };

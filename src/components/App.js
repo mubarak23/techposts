@@ -9,6 +9,8 @@ import Posts from './post/Posts';
 import PostDetail from './post/PostDetail';
 import MainOne from './courses/Posts';
 import ManagePost from './post/MangePosts';
+import Signup from './Auth/Signup';
+import Signin from './Auth/Signin';
 import './App.css';
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/about' component={AboutPage} />
+        <Route path='/signup' component={Signup} />
+        <Route path='/signin' component={Signin} />
         <Route path='/posts' component={Posts} />
         <Route path='/mainone' component={MainOne} />
         <Route path='/manage' component={ManagePost} />
