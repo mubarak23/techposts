@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import M from 'materialize-css';
 import './../App.css';
 
 const Signup = () => {
@@ -10,7 +11,7 @@ const Signup = () => {
 
   //make post request
   const postSignup = () => {
-    fetch('/signup', {
+    fetch('https://fast-plains-95666.herokuapp.com/api/user', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +25,15 @@ const Signup = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        history.push('/signin');
+        if (data.errors) {
+          M.toast({
+            html: 'An Error Has Occur Try Again',
+            classes: '#c62828 red darken-3',
+          });
+        } else {
+          M.toast({ html: data.message, classes: '#43a047 green darken-1' });
+          history.push('/signin');
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -56,7 +65,7 @@ const Signup = () => {
         <button
           className='btn waves-effect 
           waves-light #64b5f6 blue darken-1'
-          onClick={() =>postSignup()}
+          onClick={() => postSignup()}
         >
           Signup
         </button>
