@@ -9,15 +9,17 @@ const Signin = () => {
   const [password, SetPassword] = useState();
 
   const PostSignin = () => {
-    fetch('https://fast-plains-95666.herokuapp.com/api/user', {
+    console.log(username);
+    console.log(password);
+    fetch('https://fast-plains-95666.herokuapp.com/api/auth', {
       method: 'post',
       headers: {
         'Content-Type': 'Application/json',
       },
-      body: {
+      body: JSON.stringify({
         username,
         password,
-      },
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -28,8 +30,8 @@ const Signin = () => {
             classes: '#c62828 red darken-3',
           });
         } else {
-          M.toast({ html: data.message, classes: '#43a047 green darken-1' });
-          history.push('/signin');
+          M.toast({ html: '', classes: '#43a047 green darken-1' });
+          history.push('/posts');
         }
       })
       .catch((errors) => {
@@ -43,15 +45,15 @@ const Signin = () => {
         <h3>Techpost Signin</h3>
         <input
           type='text'
+          placeholder='Username'
           value={username}
           onChange={(e) => SetUsername(e.target.value)}
-          placeholder='Username'
         />
         <input
           type='password'
+          placeholder='Enter a Unique Password'
           value={password}
           onChange={(e) => SetPassword(e.target.value)}
-          placeholder='Enter Your Password'
         />
         <button
           onClick={() => PostSignin()}
