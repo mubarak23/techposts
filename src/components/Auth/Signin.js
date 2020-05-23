@@ -30,7 +30,10 @@ const Signin = () => {
             classes: '#c62828 red darken-3',
           });
         } else {
-          M.toast({ html: '', classes: '#43a047 green darken-1' });
+          M.toast({
+            html: 'login sucessfull',
+            classes: '#43a047 green darken-1',
+          });
           history.push('/posts');
         }
       })
