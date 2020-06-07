@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import M from 'materialize-css';
 import './../App.css';
-
+//import { UserContext } from '../App';
 const Signin = () => {
   const history = useHistory();
   const [username, SetUsername] = useState();
@@ -30,7 +30,13 @@ const Signin = () => {
             classes: '#c62828 red darken-3',
           });
         } else {
-          M.toast({ html: '', classes: '#43a047 green darken-1' });
+          M.toast({
+            html: 'Singin Successfully',
+            classes: '#43a047 green darken-1',
+          });
+          localStorage.setItem('jwt', data.token);
+          localStorage.setItem('user', JSON.stringify(data.user));
+
           history.push('/posts');
         }
       })

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 //import './App.css';
 import Home from './home/HomePage';
@@ -12,6 +12,7 @@ import ManagePost from './post/MangePosts';
 import Signup from './Auth/Signup';
 import Signin from './Auth/Signin';
 import './App.css';
+export const UserContext = createContext();
 function App() {
   return (
     <div className='container-fluid'>
